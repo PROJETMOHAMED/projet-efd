@@ -1,55 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/produit.css">
-          <link rel="stylesheet" href="css/modal.css">
+    <title>Équipements de sécurité - EFMADECH</title>
+
+    <!-- Styles externes -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/produit.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/projects-swiper.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <title>Équipements de sécurité</title>
+
+    <!-- Styles internes -->
+   
 </head>
 <body>
-        <!-- Navigation -->
 
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html"><img src="assets/images/logo.png" alt="EFMADECH Logo"></a>
+    <div class="main-content">
+
+        <!-- Header et Navigation (inchangé) -->
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="EFMADECH Logo"></a></div>
+                    <div class="menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li class="nav-item"><a href="apropos.html" class="nav-link">À propos</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#produit" class="nav-link">Produits <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="produit.html">Machines de précision</a></li>
+                                <li><a href="produit1.html">Systèmes automatisés</a></li>
+                                <li><a href="produit2.html">Équipements de sécurité</a></li>
+                                <li><a href="produit3.html">Outils spécialisés</a></li>
+                                <li><a href="produit4.html">Équipements électriques</a></li>
+                                <li><a href="produit5.html">Systèmes de mesure</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#telechargement" class="nav-link">Téléchargement</a></li>
+                        <li class="nav-item"><a href="actualites.html" class="nav-link">Actualité</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li class="nav-item cta"><a href="devis.html" class="btn-primary">Demandez un devis</a></li>
+                    </ul>
                 </div>
-                <div class="menu-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="apropos.html" class="nav-link">À propos</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#produit" class="nav-link">Produits <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="produit.html">Machines de précision</a></li>
-                            <li><a href="produit1.html">Les systèmes automatisés</a></li>
-                            <li><a href="produit2.html">Équipements de sécurité</a></li>
-                            <li><a href="produit3.html">Outils spécialisés</a></li>
-                            <li><a href="produit4.html">Équipements électriques</a></li>
-                            <li><a href="produit5.html">Systèmes de mesure</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="#telechargement" class="nav-link">Téléchargement</a></li>
-                    <li class="nav-item"><a href="actualites.html" class="nav-link">Actualité</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item cta"><a href="devis.html" class="btn-primary">Demandez un devis</a></li>
-                </ul>
-            </div>
-        </nav>
-            <!-- sidebar -->
-             <aside class="sidebar">
+            </nav>
+
+            <!-- Sidebar (inchangé) -->
+            <aside class="sidebar">
                 <ul>
-                    <li><a href="produit.html"> > Machines </a></li>
+                    <li><a href="produit.html"> > Machines de précision</a></li>
                     <li><a href="produit1.html"> > Systèmes automatisés</a></li>
                     <li><a href="produit2.html"> > Équipements de sécurité</a></li>
                     <li><a href="produit3.html"> > Outils spécialisés</a></li>
@@ -57,125 +63,133 @@
                     <li><a href="produit5.html"> > Systèmes de mesure</a></li>
                 </ul>
                 <div class="form">
-                     <h2>Contactez-nous</h2>
-        <p>Contactez-nous en envoyant un message ou appelez-nous pour en savoir plus sur la façon dont nous pouvons vous assister.</p>
-
-        <form action="#" method="post">
-            <div class="form-group">
-               
-                <input type="text" id="name" name="name" placeholder="Veuillez entrer votre nom" required>
-            </div>
-
-            <div class="form-group">
-                
-                <input type="email" id="email" name="email" placeholder="Veuillez entrer votre Adresse E-mail" required>
-            </div>
-
-            <div class="form-group">
-                
-                <input type="text" id="subject" name="subject" placeholder="Veuillez entrer l'objet du message" required>
-            </div>
-
-            <div class="form-group">
-            
-                <textarea id="message" name="message" placeholder="Entrer votre Message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit">Envoyer le message</button>
-        </form>
+                    <h2>Contactez-nous</h2>
+                    <p>Envoyez un message ou appelez-nous pour en savoir plus sur nos services.</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Objet du message" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Envoyer le message</button>
+                    </form>
                 </div>
-             </aside>
-             
+                <a href="tel:+33123456789" class="call-btn">
+                        📞 Appelez-nous : +33 1 23 45 67 89
+                    </a>
+            </aside>
+        </header>
 
-    </header>
-    
-    <!-- Content Section -->
-<div class="content">
-    <section class="contenu" id="content">
-         <div class="container">
-            <div class="hero-content fade-in">
-                <h1 class="section-title">Équipements de sécurité</h1>
-                <p>Les équipements de sécurité sont des dispositifs conçus pour protéger les personnes, les machines et l’environnement contre les risques liés aux systèmes automatisés et aux environnements de travail. Ils permettent de réduire ou d’éliminer les dangers comme les accidents, les incendies, les chocs électriques ou les blessures</p>
-                
-                    <img src="assets/images/produits/Équipements de sécurité.jpg" alt="industrie" class="industrie">
-                    <p>   On distingue plusieurs types d’équipements de sécurité : les équipements de protection individuelle (EPI) comme les casques, gants, lunettes, chaussures de sécurité ; et les équipements de protection collective comme les extincteurs, barrières de sécurité, arrêts d’urgence et détecteurs de fumée. L’utilisation correcte de ces équipements est essentielle pour assurer un environnement de travail sûr et conforme aux normes.</p>
-</div>
-        <!--question-Section-->
-        <div class="section">
-           
-                
-            <details>
-                <summary>1.Qu’est-ce qu’un équipement de sécurité ?</summary>
-                <div class="answer">
-                  C’est un dispositif ou matériel destiné à protéger les personnes et les machines contre les risques d’accident.
+        <!-- Section Contenu modifiée -->
+        <div class="content">
+            <section class="contenu" id="content">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1 class="section-title">Équipements de sécurité</h1>
+                        <p>Nos équipements de sécurité assurent la protection des opérateurs et la conformité aux normes industrielles les plus strictes. Chaque dispositif est testé pour garantir un environnement de travail sûr et fiable.</p>
+                        <img src="assets/images/produits/Équipements de sécurité.jpg" alt="equiapement de securité">
+                        <p>Nous proposons une large gamme incluant des casques, des gants, des lunettes de protection, des barrières de sécurité et des systèmes de surveillance. Ces équipements sont conçus pour réduire les risques et améliorer la sécurité globale sur le site industriel.</p>
+                    </div>
                 </div>
-            </details>
-             <details>
-                <summary >2.  Quels sont les deux grands types d’équipements de sécurité ?</summary>
-                <div class="answer">
-                    Les équipements de protection individuelle (EPI) et les équipements de protection collective.
+
+                <!-- FAQ -->
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h2 class="question">1. Quels types d’équipements de sécurité proposez-vous ?</h2>
+                        <div class="answer"><p>Nous proposons des équipements de protection individuelle, des systèmes de sécurité collectifs et des solutions de surveillance industrielle.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h2 class="question">2. Pourquoi la sécurité industrielle est-elle importante ?</h2>
+                        <div class="answer"><p>Elle permet de protéger les travailleurs, d’éviter les accidents coûteux et de respecter les normes légales.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h2 class="question">3. Vos équipements sont-ils certifiés ?</h2>
+                        <div class="answer"><p>Oui, tous nos produits respectent les normes CE et ISO en vigueur.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h2 class="question">4. Comment choisir le bon équipement de sécurité ?</h2>
+                        <div class="answer"><p>Il faut identifier les risques spécifiques de l’environnement de travail et sélectionner les protections adaptées.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <h2 class="question">5. Proposez-vous des formations à la sécurité ?</h2>
+                        <div class="answer"><p>Oui, nous proposons des formations pour l’utilisation correcte des équipements et la prévention des risques.</p></div>
+                    </div>
                 </div>
-            </details>
-             <details>
-                <summary>3. Donne trois exemples d’équipements de protection individuelle.</summary>
-                <div class="answer">
-                  Casque, gants, lunettes de protection
-                </div>
-            </details>
-             <details>
-                <summary>4.Donne trois exemples d’équipements de protection collective.</summary>
-                <div class="answer">
-                  Extincteur, barrière de sécurité, arrêt d’urgence.
-                </div>
-            </details>
-             <details>
-                <summary>5.Pourquoi les équipements de sécurité sont-ils importants ?</summary>
-                <div class="answer">
-                   Parce qu’ils préviennent les accidents, protègent la santé des travailleurs et assurent la sécurité des installations.
-                </div>
-            </details>
+            </section>
         </div>
-        <!--step-Section-->
-        <section class="steps" >
-            <div class="contact">
-                <p>
-                    Nous sommes fiers d'offrir des services de déménagement fiables et de qualité supérieure à nos clients. Nous sommes impatients de travailler avec vous pour rendre votre service de déménagement cle en main aussi facile et sans stress que possible.
-                </p>
+
+    </div> <!-- Fin de main-content -->
+
+    <!-- Footer inchangé -->
+    <footer class="efmadech-footer">
+        <div class="efmadech-footer-container">
+            <div class="efmadech-footer-content">
+                <div class="efmadech-footer-logo">
+                    <h3>EFMADECH</h3>
+                    <p>Solutions industrielles d'excellence</p>
+                </div>
+                <div class="efmadech-footer-links">
+                    <div class="efmadech-footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#hero">Accueil</a></li>
+                            <li><a href="apropos.html">À propos</a></li>
+                            <li><a href="#produits">Produits</a></li>
+                            <li><a href="#telechargement">Téléchargement</a></li>
+                            <li><a href="#actualite">Actualité</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="efmadech-footer-column">
+                        <h4>Produits</h4>
+                        <ul>
+                            <li><a href="#produit1">Machines de précision</a></li>
+                            <li><a href="#produit2">Systèmes automatisés</a></li>
+                            <li><a href="#produit3">Équipements de sécurité</a></li>
+                            <li><a href="#produit4">Outils spécialisés</a></li>
+                        </ul>
+                    </div>
+                    <div class="efmadech-footer-column">
+                        <h4>Contact</h4>
+                        <ul class="efmadech-contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Avenue de l'Industrie, 75001 Paris</li>
+                            <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                            <li><i class="fas fa-envelope"></i> contact@EFMADECH.fr</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-    <div class="timeline">
-                <div class="step">
-                    <div class="step-number">
-                    1
-
-                   </div>
-                        <div class="step-content">
-                            <h3>Contactez notre societe</h3>
-                            <p>Pour nous contacter, vous pouvez remplir le formulaire de contact a gauche ou nous envoyer un e-mail directement à l'adresse . Nous ferons de notre mieux pour vous répondre dans les plus brefs délais.</p>
-                        </div>
-                     </div>
-            
-                <div class="step">
-                    <div class="step-number">
-                        2
-
-                    </div>
-                        <div class="step-content">
-                            <h3>Obtenir un devis</h3>
-                            <p>Pour obtenir un devis, vous devez soumettre votre formulaire en cliquant sur le bouton "Envoyer" . Nous examinerons votre demande de devis et nous vous contacterons dans les plus brefs délais pour discuter de vos besoins et vous fournir un devis personnalisé pour votre déménagement.</p>
-                        </div>
+            <div class="efmadech-footer-bottom">
+                <p>&copy; 2025 EFMADECH. Tous droits réservés.</p>
+                <div class="efmadech-social-icons">
+                    <a href="#" class="efmadech-social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="efmadech-social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="efmadech-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="efmadech-social-icon"><i class="fab fa-youtube"></i></a>
                 </div>
-                <div class="step">
-                    <div class="step-number">
-                        3
-                    </div>
-                        <div class="step-content">
-                            <h3>Contactez notre societe</h3>
-                            <p>Une fois que nous aurons reçu votre demande de devis, notre societe de déménagement interviendra de manière complète pour s'assurer que le déménagement se déroule sans stress pour le client.</p>
-                        </div>
-                </div>
-    </div>
-        </section>
-        
-        
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script FAQ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.question');
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const parent = this.closest('.faq-item');
+                    parent.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

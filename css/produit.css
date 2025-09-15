@@ -1,6 +1,6 @@
 body{
     font-family: arial,sans-serif;
-    
+    overflow-x: hidden;
    /* display: flex;*/
 }
 html, body {
@@ -89,7 +89,7 @@ html, body {
     border-radius: 10px;
    padding-top: 20%;
     font-family: Arial, sans-serif;
-    width: 600px;
+    width: 450px;
     margin-right: 50%;
     height: 600px;
     
@@ -147,12 +147,14 @@ html, body {
     color: #fff;
     font-size: 18px;
     font-weight: bold;
-    padding: 14px 35px;
+    padding: 20px 10px;
     border-radius: 50px;
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: all 0.3s ease-in-out;
-    margin-left: 20%;
+    margin-left: 10%;
+    margin-top: 0%;
+    
     
 }
 
@@ -167,12 +169,12 @@ html, body {
         }
 
         /* Images et contenu */
-        .contenu img { width: 180%; }
-        .content p { width: 180%; font-weight: bold; }
+        .contenu img { width: 160%; }
+        .content p { width: 160%; font-weight: bold; }
         .sidebar { margin-left: 15%; }
 
         /* FAQ */
-        .faq-container { width: 180%; max-width: 200%; padding-left: 3%; }
+        .faq-container { width: 160%; max-width: 200%; padding-left: 3%; }
         .faq-item { background-color: #f1f1f1; margin-bottom: 10px; padding: 10px 15px; overflow: hidden; }
         .question { cursor: pointer; font-weight: bold; background: #f1f1f1; padding: 2%; font-size: 16px; margin: 0; user-select: none; }
         .question:hover { background: rgba(7, 31, 96, 0.9); color: white; }
@@ -202,12 +204,6 @@ html, body {
         .efmadech-social-icon { display: flex; justify-content: center; align-items: center; width: 35px; height: 35px; background-color: rgba(255, 255, 255, 0.1); color: #fff; border-radius: 50%; text-decoration: none; font-size: 18px; transition: 0.3s; }
         .efmadech-social-icon:hover { background-color: rgba(7, 31, 96, 0.9); transform: translateY(-3px); }
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .container { flex-direction: column; }
-            .left-panel, .right-panel { padding: 0; }
-            .efmadech-footer-content { flex-direction: column; gap: 30px; }
-            .efmadech-footer-bottom { flex-direction: column; gap: 20px; }
-        }
+       
 
 

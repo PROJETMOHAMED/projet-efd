@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
-    
+     <style>
+        .contenu img { width: 140%; }
+        .content p { width: 140%; font-weight: bold; }
+        .faq-container { width: 140%; max-width: 200%; padding-left: 0%; }
+         .section-title {width: 210%;}
+    </style>
 </head>
 <body>
 
@@ -50,7 +55,7 @@
         </nav>
 
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="desktop">
             <ul>
                 <li><a href="produit.html"> > Machines de précision</a></li>
                 <li><a href="produit1.html"> > Systèmes automatisés</a></li>
@@ -84,7 +89,7 @@
                     <h1 class="section-title">Systèmes de mesure</h1>
                     <p>Les systèmes de mesure sont des dispositifs permettant de détecter, quantifier et analyser des grandeurs physiques (telles que la température, la pression, la vitesse, la tension ou le débit) afin d’assurer le suivi et le contrôle d’un processus.</p>
                     <img src="assets/images/produits/Systèmes de mesure.png" alt="Systèmes de mesure" class="industrie">
-                    <p>Ils se composent généralement de capteurs (qui transforment une grandeur physique en signal), d’un conditionneur de signal (qui adapte le signal), d’un dispositif de traitement (souvent un microcontrôleur ou automate), et d’un affichage ou enregistrement des résultats. Ces systèmes jouent un rôle essentiel dans les domaines de l’automatisation, de l’industrie, de la médecine et de la recherche scientifique, car ils permettent d’améliorer la précision, la sécurité et la qualité des opérations.</p>
+                    <p>Ils se composent généralement de capteurs (qui transforment une grandeur physique en signal), d’un conditionneur de signal (qui adapte le signal), d’un dispositif de traitement (souvent un microcontrôleur ou automate), et d’un affichage ou enregistrement des résultats. Ces systèmes jouent un rôle essentiel dans les domaines de l’automatisation, de l’industrie, de la médecine et de la recherche scientifique, car ils permettent d’améliorer la précision, la sécurité et la qualité des opérations..</p>
                 </div>
 
                 <!-- FAQ -->
@@ -114,6 +119,41 @@
         </div>
 
 </div> <!-- Fin de main-content -->
+<aside class="sidebar" id="mobile">
+                <ul>
+                    <li><a href="produit.html"> > Machines de précision</a></li>
+                    <li><a href="produit1.html"> > Systèmes automatisés</a></li>
+                    <li><a href="produit2.html"> > Équipements de sécurité</a></li>
+                    <li><a href="produit3.html"> > Outils spécialisés</a></li>
+                    <li><a href="produit4.html"> > Équipements électriques</a></li>
+                    <li><a href="produit5.html"> > Systèmes de mesure</a></li>
+                </ul>
+
+                <!-- Formulaire contact -->
+                <div class="form">
+                    <h2>Contactez-nous</h2>
+                    <p>Envoyez un message ou appelez-nous pour en savoir plus sur nos services.</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Objet du message" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Envoyer le message</button>
+                    </form>
+                </div>
+                    <a href="tel:+33123456789" class="call-btn">
+                        📞 Appelez-nous : +33 1 23 45 67 89
+                    </a>
+
+            </aside>
 
 <!-- Footer -->
 <footer class="efmadech-footer">
@@ -138,10 +178,12 @@
                 <div class="efmadech-footer-column">
                     <h4>Produits</h4>
                     <ul>
-                        <li><a href="#produit1">Machines de précision</a></li>
-                        <li><a href="#produit2">Systèmes automatisés</a></li>
-                        <li><a href="#produit3">Équipements de sécurité</a></li>
-                        <li><a href="#produit4">Outils spécialisés</a></li>
+                            <li><a href="produit.html">  Machines de précision</a></li>
+                            <li><a href="produit1.html"> Systèmes automatisés</a></li>
+                            <li><a href="produit2.html"> Équipements de sécurité</a></li>
+                            <li><a href="produit3.html"> Outils spécialisés</a></li>
+                            <li><a href="produit4.html"> Équipements électriques</a></li>
+                            <li><a href="produit5.html"> Systèmes de mesure</a></li>
                     </ul>
                 </div>
                 <div class="efmadech-footer-column">
@@ -177,6 +219,31 @@
             });
         });
     });
+     function gererAsideVisibilite() {
+    // Sélectionne les deux éléments aside par leur ID
+    const asideDesktop = document.getElementById('desktop');
+    const asideMobile = document.getElementById('mobile');
+    
+    // Définit un point de rupture pour la version mobile (par exemple, 992 pixels)
+    const breakpoint = 992;
+    
+    // Vérifie la largeur actuelle de la fenêtre
+    if (window.innerWidth > breakpoint) {
+        // Version Desktop : affiche l'aside desktop et cache l'aside mobile
+        asideDesktop.style.display = 'block';
+        asideMobile.style.display = 'none';
+    } else {
+        // Version Mobile : affiche l'aside mobile et cache l'aside desktop
+        asideDesktop.style.display = 'none';
+        asideMobile.style.display = 'block';
+    }
+}
+
+// Exécute la fonction une fois au chargement de la page
+document.addEventListener('DOMContentLoaded', gererAsideVisibilite);
+
+// Ré-exécute la fonction à chaque fois que la fenêtre est redimensionnée
+window.addEventListener('resize', gererAsideVisibilite);
 </script>
 
 </body>

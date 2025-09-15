@@ -14,7 +14,12 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
     <!-- Styles internes -->
-    
+     <style>
+        .contenu img { width: 140%; }
+        .content p { width: 140%; font-weight: bold; }
+        .faq-container { width: 140%; max-width: 200%; padding-left: 0%; }
+
+    </style>
 </head>
 <body>
 
@@ -50,7 +55,7 @@
         </nav>
 
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="desktop">
             <ul>
                 <li><a href="produit.html"> > Machines de précision</a></li>
                 <li><a href="produit1.html"> > Systèmes automatisés</a></li>
@@ -82,9 +87,9 @@
             <div class="container">
                 <div class="hero-content fade-in">
                     <h1 class="section-title">Outils spécialisés</h1>
-                    <p>Les outils spécialisés sont des instruments conçus pour réaliser des tâches précises et techniques, offrant précision et efficacité.</p>
+                    <p>Les outils spécialisés sont des instruments ou dispositifs conçus pour réaliser des tâches précises dans un domaine particulier. Contrairement aux outils courants, ils répondent à des besoins techniques spécifiques et permettent d’obtenir une meilleure précision, rapidité et efficacité.</p>
                     <img src="assets/images/produits/Outils spécialisés.png" alt="Outils spécialisés" class="industrie">
-                    <p>Exemples : logiciels de programmation (Step7, TIA Portal), multimètres, oscilloscopes, outils de diagnostic pour détecter des pannes. Indispensables pour maintenance, contrôle qualité et optimisation des machines.</p>
+                    <p>Dans le domaine des systèmes automatisés, on peut citer comme exemples les logiciels de programmation (Step7, TIA Portal), les multimètres pour tester les circuits électriques, les oscilloscopes, ou encore les outils de diagnostic pour détecter des pannes. Dans l’industrie, ces outils sont indispensables pour la maintenance, le contrôle de qualité et l’optimisation des machines.</p>
                 </div>
 
                 <!-- FAQ -->
@@ -113,6 +118,41 @@
             </section>
         </div>
 </div>
+ <aside class="sidebar" id="mobile">
+                <ul>
+                    <li><a href="produit.html"> > Machines de précision</a></li>
+                    <li><a href="produit1.html"> > Systèmes automatisés</a></li>
+                    <li><a href="produit2.html"> > Équipements de sécurité</a></li>
+                    <li><a href="produit3.html"> > Outils spécialisés</a></li>
+                    <li><a href="produit4.html"> > Équipements électriques</a></li>
+                    <li><a href="produit5.html"> > Systèmes de mesure</a></li>
+                </ul>
+
+                <!-- Formulaire contact -->
+                <div class="form">
+                    <h2>Contactez-nous</h2>
+                    <p>Envoyez un message ou appelez-nous pour en savoir plus sur nos services.</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Objet du message" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Envoyer le message</button>
+                    </form>
+                </div>
+                    <a href="tel:+33123456789" class="call-btn">
+                        📞 Appelez-nous : +33 1 23 45 67 89
+                    </a>
+
+            </aside>
 
 <!-- Footer -->
 <footer class="efmadech-footer">
@@ -126,21 +166,23 @@
                 <div class="efmadech-footer-column">
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="#hero">Accueil</a></li>
-                        <li><a href="apropos.html">À propos</a></li>
-                        <li><a href="#produits">Produits</a></li>
-                        <li><a href="#telechargement">Téléchargement</a></li>
-                        <li><a href="#actualite">Actualité</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                            <li><a href="produit.html">  Machines de précision</a></li>
+                            <li><a href="produit1.html"> Systèmes automatisés</a></li>
+                            <li><a href="produit2.html"> Équipements de sécurité</a></li>
+                            <li><a href="produit3.html"> Outils spécialisés</a></li>
+                            <li><a href="produit4.html"> Équipements électriques</a></li>
+                            <li><a href="produit5.html"> Systèmes de mesure</a></li>
                     </ul>
                 </div>
                 <div class="efmadech-footer-column">
                     <h4>Produits</h4>
                     <ul>
-                        <li><a href="#produit1">Machines de précision</a></li>
-                        <li><a href="#produit2">Systèmes automatisés</a></li>
-                        <li><a href="#produit3">Équipements de sécurité</a></li>
-                        <li><a href="#produit4">Outils spécialisés</a></li>
+                        <li><a href="produit.html">  Machines de précision</a></li>
+                            <li><a href="produit1.html"> Systèmes automatisés</a></li>
+                            <li><a href="produit2.html"> Équipements de sécurité</a></li>
+                            <li><a href="produit3.html"> Outils spécialisés</a></li>
+                            <li><a href="produit4.html"> Équipements électriques</a></li>
+                            <li><a href="produit5.html"> Systèmes de mesure</a></li>
                     </ul>
                 </div>
                 <div class="efmadech-footer-column">
@@ -176,6 +218,31 @@
             });
         });
     });
+      function gererAsideVisibilite() {
+    // Sélectionne les deux éléments aside par leur ID
+    const asideDesktop = document.getElementById('desktop');
+    const asideMobile = document.getElementById('mobile');
+    
+    // Définit un point de rupture pour la version mobile (par exemple, 992 pixels)
+    const breakpoint = 992;
+    
+    // Vérifie la largeur actuelle de la fenêtre
+    if (window.innerWidth > breakpoint) {
+        // Version Desktop : affiche l'aside desktop et cache l'aside mobile
+        asideDesktop.style.display = 'block';
+        asideMobile.style.display = 'none';
+    } else {
+        // Version Mobile : affiche l'aside mobile et cache l'aside desktop
+        asideDesktop.style.display = 'none';
+        asideMobile.style.display = 'block';
+    }
+}
+
+// Exécute la fonction une fois au chargement de la page
+document.addEventListener('DOMContentLoaded', gererAsideVisibilite);
+
+// Ré-exécute la fonction à chaque fois que la fenêtre est redimensionnée
+window.addEventListener('resize', gererAsideVisibilite);
 </script>
 
 </body>

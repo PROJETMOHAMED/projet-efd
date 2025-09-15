@@ -7,13 +7,19 @@
 
     <!-- Styles externes -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/produit.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/projects-swiper.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
-    
+    <style>
+        .contenu img { width: 120%; }
+        .content p { width: 120%; font-weight: bold; }
+        .faq-container { width: 120%; max-width: 200%; padding-left: 0%; }
+
+    </style>
 </head>
 <body>
 
@@ -52,7 +58,7 @@
             </nav>
 
             <!-- Sidebar -->
-            <aside class="sidebar">
+            <aside class="sidebar" id="desktop">
                 <ul>
                     <li><a href="produit.html"> > Machines de précision</a></li>
                     <li><a href="produit1.html"> > Systèmes automatisés</a></li>
@@ -93,9 +99,9 @@
                 <div class="container">
                     <div class="hero-content fade-in">
                         <h1 class="section-title">Les systèmes automatisés</h1>
-                        <p>Les systèmes automatisés sont des dispositifs techniques capables d’exécuter des tâches de manière autonome...</p>
+                        <p>Les systèmes automatisés sont des dispositifs techniques capables d’exécuter des tâches de manière autonome, sans intervention humaine directe. Ils reposent généralement sur des capteurs, des actionneurs, un dispositif de commande et un programme de pilotage. Leur objectif principal est de rendre un processus plus rapide, précis et fiable.</p>
                         <img src="assets/images/produits/Systèmes automatisés.jpg" alt="industrie" class="industrie">
-                        <p>Adaptés aux secteurs de la mécanique fine, de l’aéronautique et de l’électronique...</p>
+                        <p>Adaptées aux secteurs de la mécanique fine, de l’aéronautique et de l’électronique.On les retrouve dans de nombreux domaines comme l’industrie, la médecine, les transports ou encore la domotique. Grâce à l’automatisation, on réduit les erreurs humaines, on améliore la productivité et on augmente la sécurité des opérations</p>
                     </div>
 
                     <!-- FAQ -->
@@ -126,6 +132,41 @@
         </div>
 
     </div> <!-- Fin main-content -->
+    <aside class="sidebar" id="mobile">
+                <ul>
+                    <li><a href="produit.html"> > Machines de précision</a></li>
+                    <li><a href="produit1.html"> > Systèmes automatisés</a></li>
+                    <li><a href="produit2.html"> > Équipements de sécurité</a></li>
+                    <li><a href="produit3.html"> > Outils spécialisés</a></li>
+                    <li><a href="produit4.html"> > Équipements électriques</a></li>
+                    <li><a href="produit5.html"> > Systèmes de mesure</a></li>
+                </ul>
+
+                <!-- Formulaire contact -->
+                <div class="form">
+                    <h2>Contactez-nous</h2>
+                    <p>Envoyez un message ou appelez-nous pour en savoir plus sur nos services.</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Objet du message" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Envoyer le message</button>
+                    </form>
+                </div>
+                    <a href="tel:+33123456789" class="call-btn">
+                        📞 Appelez-nous : +33 1 23 45 67 89
+                    </a>
+
+            </aside>
 
     <!-- Footer -->
     <footer class="efmadech-footer">
@@ -150,10 +191,12 @@
                     <div class="efmadech-footer-column">
                         <h4>Produits</h4>
                         <ul>
-                            <li><a href="#produit1">Machines de précision</a></li>
-                            <li><a href="#produit2">Systèmes automatisés</a></li>
-                            <li><a href="#produit3">Équipements de sécurité</a></li>
-                            <li><a href="#produit4">Outils spécialisés</a></li>
+                            <li><a href="produit.html">  Machines de précision</a></li>
+                            <li><a href="produit1.html"> Systèmes automatisés</a></li>
+                            <li><a href="produit2.html"> Équipements de sécurité</a></li>
+                            <li><a href="produit3.html"> Outils spécialisés</a></li>
+                            <li><a href="produit4.html"> Équipements électriques</a></li>
+                            <li><a href="produit5.html"> Systèmes de mesure</a></li>
                         </ul>
                     </div>
                     <div class="efmadech-footer-column">
@@ -189,6 +232,31 @@
                 });
             });
         });
+          function gererAsideVisibilite() {
+    // Sélectionne les deux éléments aside par leur ID
+    const asideDesktop = document.getElementById('desktop');
+    const asideMobile = document.getElementById('mobile');
+    
+    // Définit un point de rupture pour la version mobile (par exemple, 992 pixels)
+    const breakpoint = 992;
+    
+    // Vérifie la largeur actuelle de la fenêtre
+    if (window.innerWidth > breakpoint) {
+        // Version Desktop : affiche l'aside desktop et cache l'aside mobile
+        asideDesktop.style.display = 'block';
+        asideMobile.style.display = 'none';
+    } else {
+        // Version Mobile : affiche l'aside mobile et cache l'aside desktop
+        asideDesktop.style.display = 'none';
+        asideMobile.style.display = 'block';
+    }
+}
+
+// Exécute la fonction une fois au chargement de la page
+document.addEventListener('DOMContentLoaded', gererAsideVisibilite);
+
+// Ré-exécute la fonction à chaque fois que la fenêtre est redimensionnée
+window.addEventListener('resize', gererAsideVisibilite);
     </script>
 
 </body>

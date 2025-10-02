@@ -16,9 +16,11 @@ html, body {
       font-size: 24px;
       font-weight: bold;
       width: 180%;
-
       /* Création de la diagonale */
       clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .ecriture{
+        font-size: 135%;
     }
 
 .sidebar{
@@ -43,6 +45,8 @@ html, body {
     font-weight: bold;
     border-bottom: 1px solid #ddd;
     font-size: large;
+    font-weight: 10%;
+
 }
 .sidebar li a{
     display: block;
@@ -92,6 +96,8 @@ html, body {
     width: 450px;
     margin-right: 50%;
     height: 600px;
+    font-size: 170%;
+
     
 }
 

@@ -150,8 +150,8 @@
 
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
     margin-bottom: 60px;
 }
 
@@ -323,7 +323,9 @@
     transform: translateY(-2px);
 }
 
-.pagination-btn.next {
+/* SÉLECTEUR MIS À JOUR pour inclure 'next' ET 'prev' */
+.pagination-btn.next,
+.pagination-btn.prev {
     border-radius: 25px;
     padding: 12px 20px;
 }

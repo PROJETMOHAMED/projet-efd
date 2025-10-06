@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const articleCards = document.querySelectorAll('.article-card');
     const searchInput = document.getElementById('searchInput');
-    const paginationButtons = document.querySelectorAll('.pagination-btn');
+    const paginationContainer = document.querySelector('.pagination'); 
     
     // Variables pour la pagination
     let currentPage = 1;
-    const articlesPerPage = 6;
+    const articlesPerPage = 3;
     let filteredArticles = Array.from(articleCards);
     
     // Animation au scroll
@@ -81,31 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updatePagination();
     });
     
-    // Pagination
-    paginationButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const page = this.getAttribute('data-page');
-            
-            if (page === 'next') {
-                const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
-                if (currentPage < totalPages) {
-                    currentPage++;
-                }
-            } else {
-                currentPage = parseInt(page);
-            }
-            
-            applyFilters();
-            updatePagination();
-            
-            // Scroll vers le haut de la section
-            document.querySelector('.actualites-grid').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    });
-    
+    // L'ancienne logique pour les boutons de pagination est maintenant intégrée dans updatePagination
+    // et ne doit plus être ici pour éviter les doublons ou les erreurs de référence.
+
     // Fonction pour appliquer les filtres
     function applyFilters() {
         // Cacher tous les articles d'abord
@@ -124,20 +102,48 @@ document.addEventListener('DOMContentLoaded', function() {
             articlesToShow.forEach((card, index) => {
                 card.classList.remove('hidden');
                 card.classList.add('filtered');
-                card.style.animationDelay = `${index * 0.1}s`;
+                // Réinitialiser le style d'animation-delay pour la réapparition
+                card.style.animationDelay = `${index * 0.1}s`; 
             });
         }, 100);
     }
     
-    // Fonction pour mettre à jour la pagination
+    // Fonction pour mettre à jour la pagination (CORRIGÉE)
     function updatePagination() {
         const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
-        const paginationContainer = document.querySelector('.pagination');
         
-        // Vider la pagination existante
+        // 1. Vider la pagination existante (Ceci supprime les anciens boutons)
         paginationContainer.innerHTML = '';
         
-        // Créer les boutons de pagination
+        // Gérer la visibilité
+        if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            return;
+        } else {
+            paginationContainer.style.display = 'flex'; // S'assurer qu'il est visible
+        }
+
+        // 2. AJOUTER LE BOUTON PRECEDENT (prev)
+        if (currentPage > 1) {
+            const prevButton = document.createElement('button');
+            prevButton.className = 'pagination-btn prev';
+            prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>'; // Icône Font Awesome
+            
+            prevButton.addEventListener('click', function() {
+                currentPage--; // Retour à la page précédente
+                applyFilters();
+                updatePagination();
+                
+                document.querySelector('.actualites-grid').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+            
+            paginationContainer.appendChild(prevButton);
+        }
+        
+        // 3. Créer les boutons numérotés
         for (let i = 1; i <= totalPages; i++) {
             const button = document.createElement('button');
             button.className = `pagination-btn ${i === currentPage ? 'active' : ''}`;
@@ -158,31 +164,28 @@ document.addEventListener('DOMContentLoaded', function() {
             paginationContainer.appendChild(button);
         }
         
-        // Ajouter le bouton suivant si nécessaire
+        // 4. Ajouter le bouton SUIVANT (next)
         if (currentPage < totalPages) {
             const nextButton = document.createElement('button');
             nextButton.className = 'pagination-btn next';
-            nextButton.setAttribute('data-page', 'next');
             nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
             
             nextButton.addEventListener('click', function() {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    applyFilters();
-                    updatePagination();
-                    
-                    document.querySelector('.actualites-grid').scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                currentPage++;
+                applyFilters();
+                updatePagination();
+                
+                document.querySelector('.actualites-grid').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
             
             paginationContainer.appendChild(nextButton);
         }
     }
     
-    // Newsletter
+    // Newsletter (inchangé)
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
@@ -208,6 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialisation
     updatePagination();
+    applyFilters(); // Assure que seuls les articles de la page 1 sont visibles au chargement
     
     // Animation des cartes au chargement
     setTimeout(() => {

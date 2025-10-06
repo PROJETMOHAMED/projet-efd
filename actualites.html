@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualités - EFMADECH</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/produit.css">
     <link rel="stylesheet" href="css/actualites.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <header>
         <nav class="navbar">
             <div class="container">
@@ -27,13 +27,13 @@
                     <li class="nav-item dropdown">
                         <a href="#produits" class="nav-link">Produits <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                                <li><a href="produit.html">Machines de précision</a></li>
-                                <li><a href="produit1.html">Systèmes automatisés</a></li>
-                                <li><a href="produit2.html">Équipements de sécurité</a></li>
-                                <li><a href="produit3.html">Outils spécialisés</a></li>
-                                <li><a href="produit4.html">Équipements électriques</a></li>
-                                <li><a href="produit5.html">Systèmes de mesure</a></li>
-                            </ul>
+                            <li><a href="produit.html">Machines de précision</a></li>
+                            <li><a href="produit1.html">Systèmes automatisés</a></li>
+                            <li><a href="produit2.html">Équipements de sécurité</a></li>
+                            <li><a href="produit3.html">Outils spécialisés</a></li>
+                            <li><a href="produit4.html">Équipements électriques</a></li>
+                            <li><a href="produit5.html">Systèmes de mesure</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item"><a href="#telechargement" class="nav-link">Téléchargement</a></li>
                     <li class="nav-item"><a href="actualites.html" class="nav-link active">Actualité</a></li>
@@ -44,7 +44,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section Actualités -->
     <section class="actualites-hero">
         <div class="hero-overlay"></div>
         <div class="container">
@@ -55,7 +54,6 @@
         </div>
     </section>
 
-    <!-- Filtres d'actualités -->
     <section class="actualites-filters section-padding">
         <div class="container">
             <div class="filters-wrapper">
@@ -74,12 +72,10 @@
         </div>
     </section>
 
-    <!-- Articles Grid -->
     <section class="actualites-grid section-padding">
         <div class="container">
             <div class="articles-grid">
                 
-                <!-- Article 1 -->
                 <article class="article-card scroll-reveal" data-category="innovation">
                     <div class="article-image">
                         <img src="assets/images/produits/Systèmes automatisés.jpg" alt="Nouvelle technologie d'automatisation">
@@ -106,7 +102,6 @@
                     </div>
                 </article>
 
-                <!-- Article 2 -->
                 <article class="article-card scroll-reveal" data-category="produits">
                     <div class="article-image">
                         <img src="assets/images/produits/Équipements de sécurité.jpg" alt="Nouveaux équipements de sécurité">
@@ -126,14 +121,13 @@
                                 <i class="fas fa-clock"></i>
                                 <span>4 min de lecture</span>
                             </div>
-                            <a href="article-securite.html" class="read-more">
+                            <a href="article-equipement.html" class="read-more">
                                 Lire plus <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Article 3 -->
                 <article class="article-card scroll-reveal" data-category="evenements">
                     <div class="article-image">
                         <img src="assets/images/produits/Machines de précision.jpg" alt="Salon industriel 2025">
@@ -160,7 +154,6 @@
                     </div>
                 </article>
 
-                <!-- Article 4 -->
                 <article class="article-card scroll-reveal" data-category="entreprise">
                     <div class="article-image">
                         <img src="assets/images/produits/Systèmes de mesure.png" alt="Expansion internationale">
@@ -187,7 +180,6 @@
                     </div>
                 </article>
 
-                <!-- Article 5 -->
                 <article class="article-card scroll-reveal" data-category="innovation">
                     <div class="article-image">
                         <img src="assets/images/produits/Outils spécialisés.png" alt="Intelligence artificielle">
@@ -214,7 +206,6 @@
                     </div>
                 </article>
 
-                <!-- Article 6 -->
                 <article class="article-card scroll-reveal" data-category="produits">
                     <div class="article-image">
                         <img src="assets/images/produits/Équipements électriques.png" alt="Équipements électriques intelligents">
@@ -243,8 +234,10 @@
 
             </div>
 
-            <!-- Pagination -->
             <div class="pagination">
+                <button class="pagination-btn prev" data-page="prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
                 <button class="pagination-btn active" data-page="1">1</button>
                 <button class="pagination-btn" data-page="2">2</button>
                 <button class="pagination-btn" data-page="3">3</button>
@@ -255,7 +248,6 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
     <section class="newsletter-section">
         <div class="container">
             <div class="newsletter-content">
@@ -271,8 +263,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+   <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -285,8 +276,7 @@
                         <ul>
                             <li><a href="index.html">Accueil</a></li>
                             <li><a href="apropos.html">A propos</a></li>
-                            <li><a href="#produits">Produits</a></li>
-                            <li><a href="#telechargement">Téléchargement</a></li>
+                            <li><a href="telechargement">Téléchargement</a></li>
                             <li><a href="actualites.html">Actualité</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
@@ -294,10 +284,12 @@
                     <div class="footer-column">
                         <h4>Produits</h4>
                         <ul>
-                            <li><a href="#produit1">Machines de précision</a></li>
-                            <li><a href="#produit2">Systèmes automatisés</a></li>
-                            <li><a href="#produit3">Équipements de sécurité</a></li>
-                            <li><a href="#produit4">Outils spécialisés</a></li>
+                            <li><a href="produit.html"> 	Machines de précision</a></li>
+                            <li><a href="produit1.html"> Systèmes automatisés</a></li>
+                            <li><a href="produit2.html"> Équipements de sécurité</a></li>
+                            <li><a href="produit3.html"> Outils spécialisés</a></li>
+                            <li><a href="produit4.html"> Équipements électriques</a></li>
+                            <li><a href="produit5.html"> Systèmes de mesure</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -323,6 +315,6 @@
     </footer>
 
     <script src="js/actualites.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script> 
 </body>
 </html>

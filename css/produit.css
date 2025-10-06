@@ -188,27 +188,27 @@ html, body {
         .faq-item.active .answer { max-height: 500px; }
 
         /* Footer EFMADECH */
-        .efmadech-footer { background-color: #030a3f; color: #fff; padding: 80px 0 20px; width: 100%; }
+        .efmadech-footer { background-color: #071f60; color: #fff; padding: 80px 0 20px; width: 100%; }
         .efmadech-footer-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .efmadech-footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; margin-bottom: 50px; }
         .efmadech-footer-logo { flex: 1; min-width: 250px; }
-        .efmadech-footer-logo h3 { font-size: 24px; margin-bottom: 5px; }
+        .efmadech-footer-logo h3 { font-size: 2rem; margin-bottom: 15px; }
         .efmadech-footer-logo p { font-size: 14px; color: #ccc; }
         .efmadech-footer-links { flex: 2; display: flex; flex-wrap: wrap; gap: 30px; }
         .efmadech-footer-column { flex: 1; min-width: 150px; }
-        .efmadech-footer-column h4 { font-size: 18px; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .efmadech-footer-column h4 { font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
         .efmadech-footer-column h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 2px; background-color: rgba(7, 31, 96, 0.9); }
         .efmadech-footer-column ul { list-style: none; padding: 0; margin: 0; }
         .efmadech-footer-column ul li { margin-bottom: 10px; }
         .efmadech-footer-column ul li a { color: #ccc; text-decoration: none; }
-        .efmadech-footer-column ul li a:hover { color: #fff; }
+        .efmadech-footer-column ul li a:hover { color: rgba(52, 100, 233, 0.9); }
         .efmadech-contact-info li { font-size: 14px; color: #ccc; margin-bottom: 10px; }
         .efmadech-contact-info i { margin-right: 5px; }
         .efmadech-footer-bottom { border-top: 1px solid #444; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .efmadech-footer-bottom p { font-size: 14px; color: #ccc; }
         .efmadech-social-icons { display: flex; gap: 15px; }
         .efmadech-social-icon { display: flex; justify-content: center; align-items: center; width: 35px; height: 35px; background-color: rgba(255, 255, 255, 0.1); color: #fff; border-radius: 50%; text-decoration: none; font-size: 18px; transition: 0.3s; }
-        .efmadech-social-icon:hover { background-color: rgba(7, 31, 96, 0.9); transform: translateY(-3px); }
+        .efmadech-social-icon:hover { background-color: rgba(107, 138, 224, 0.9); transform: translateY(-3px); }
 
        
 
